@@ -8,10 +8,12 @@
 </head>
 <body>
 
-  <input [(ngModel)]="id" type="text" placeholder="Enter Country id..."><br>
+  <input [(ngModel)]="id" type="number" placeholder="Enter Country id..."><br>
   <input [(ngModel)]="name" type="text" placeholder="Enter Country name..."><br>
   <input [(ngModel)]="code" type="text" placeholder="Enter Country code..."><br>
-  <button (click)="addRecordsToService()">Insert Country</button>
+  <button (click)="addRecordsToService()">Insert Country</button> <br>
+
+  
   
   <div *ngFor="let country of countries">
     <ul>
@@ -20,6 +22,10 @@
       <li>{{country.code}}</li>
     </ul>
   </div>
+
+  <button (click)="deleteRecordsFromService()">Delete Country</button>
+  
+  <button (click)="updateRecordsToService()">Update Country</button>
   
 </body>
 </html>

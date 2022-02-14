@@ -22,4 +22,19 @@ export class CountryService {
     return observable;
 
   }
+  deleteCountry(jj:number):Observable<Country> {
+    let observable = this.http.delete<Country>('http://localhost:3000/Country/'+jj);
+    return observable;
+  }
+
+  updateCountry(country: Country):Observable<Country> {
+    let observable = this.http.put<Country>('http://localhost:3000/Country/'+country.id,country);
+    return observable;
+  }
+
+  // deleteCountry(): Observable<Country>{
+
+  //   return this.http.delete('http://localhost:3000/Country/1');
+  // }
+  
 }
